@@ -2,71 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <div class="left-part">
-        <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Background Image">
-            <div class="overlay">
-                <div class="overlay-logo"></div>
-                <span class="overlay-text">ODIN</span>
-
-            </div>
+<div class="content flex">
+    <div class="image-sidebar flex">
+        <div class="logo flex">
+            <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png" alt="Odin Logo">
+            <h1>ODIN</h1>
         </div>
+        <p>Photo by MikołajIosif on Unsplash</p>
     </div>
-    <div class="right-part">
-        <div class="text-place">
+
+    <div class="form-sidebar">
+        <div class="dummy-text">
             <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</p>
-            <p>Sign up now to get started</p>
-            <p>You know you want to</p>
-        </div>
-        <div class="form-container">
-            <form class="sign-up">
-                <div class="form-inputs">
-
-                <div class="form-row">
-                    <div>
-                        <label for="first_name">First Name:</label>
-                        <input type="text" id="first_name" required>
-                    </div>
-                    <div>
-                        <label for="last_name">Last Name:</label>
-                        <input type="text" id="last_name" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div>
-                        <label for="phone_number">Phone Number:</label>
-                        <input type="text" id="phone_number" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div>
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" required>
-                    </div>
-                    <div>
-                        <label for="password2">Password Confirmation:</label>
-                        <input type="password" id="password2" required>
-                    </div>
-                </div>
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
+            <p>Sign up <em>now</em> to get started.</p>
+            <p>You <em>know</em> you want to.</p>
         </div>
 
+        <form class="input-form flex">
+            <h2>Let's do this!</h2>
+            <div class="input flex">
+                <div class="flex">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" class="inputs" required>
+                </div>
+                <div class="flex">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" class="inputs" required>
+                </div>
+                <div class="flex">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="inputs" required>
+                </div>
+                <div class="flex">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" class="inputs">
+                </div>
+                <div class="flex">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="inputs" required>
+                </div>
+                <div class="flex">
+                    <label for="password_confirmation">Confirm Password</label>
+                    <input type="password" id="password_confirmation" class="inputs" required>
+                </div>
+            </div>
+            <button type="submit" class="btn">Create Account</button>
+        </form>
 
+        <p class="form-sidebar">Already have an account? <a href="#">Log in</a></p>
     </div>
 </div>
-
 </body>
 </html>

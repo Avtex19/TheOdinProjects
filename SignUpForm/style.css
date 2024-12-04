@@ -1,132 +1,185 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    background-color: azure;
-    margin-left: 100px;
-    margin-right: 100px;
+:root {
+    --tones: #154268;
+    --input-border: #e5e7eb;
+    --focus: #1d4ed8;
+    --error: #b91c1c;
+    --btn-hover: #103453;
+    --btn-active: #0a2134;
+}
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
-.img-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+body,
+h1,
+h2,
+p {
+    margin: 0;
 }
-.img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.overlay {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-
-}
-
-.overlay-logo {
-    width: 100px;
-    height: 100px;
-    background-image: url('https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.overlay-text {
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-}
-
-.left-part img {
-    width: 100%;
-    max-width: 600px;
-}
-
-.form-container {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
+body {
     min-height: 100vh;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
 }
-.form-inputs{
-    background-color: white;
-
+button {
+    border: none;
 }
-
-.sign-up {
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-}
-
-.sign-up label {
-    font-size: 16px;
-    margin-bottom: 8px;
-    display: block;
-    color: #333;
-}
-
-.sign-up input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-.sign-up input:focus {
-    border-color: #0066cc;
+input {
     outline: none;
 }
-
-.form-row {
+.btn {
+    height: 3.125rem;
+    width: 14.6875rem;
+    font-size: 1.125rem;
+    color: white;
+    background-color: var(--tones);
+    border-radius: 0.5rem;
+    margin-top: 2.1875rem;
+    margin-bottom: 2.1875rem;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.1);
+}
+.btn:active {
+    background-color: var(--btn-active);
+}
+.inputs {
+    border: 1px solid var(--input-border);
+    padding: 0.625rem;
+    border-radius: 5px;
+    transition: ease-in-out 0.1s;
+}
+.inputs:focus {
+    border-color: var(--focus);
+}
+.inputs:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--error);
+}
+.error {
+    font-size: 0.8rem;
+    color: var(--error);
+}
+.flex {
     display: flex;
+}
+.content {
+    flex-direction: column;
+}
+.image-sidebar {
+    min-height: 20vh;
+    background-size: cover;
+    text-align: center;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 15px;
 }
-
-
-.sign-up button {
+.image-sidebar .logo {
+    min-height: 10vh;
     width: 100%;
-    padding: 12px;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
 }
-
-.sign-up button:hover {
-    background-color: #005bb5;
+.logo img {
+    width: 8%;
+    margin-right: 5px;
 }
-
-
-.sign-up button {
-    width: 100%;
-    padding: 12px;
-    background-color: #0066cc;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.logo h1 {
+    color: white;
+    font-size: 1.6rem;
+    font-family: "Lora", serif;
 }
-
-.sign-up button:hover {
-    background-color: #005bb5;
+.image-sidebar p,
+.image-sidebar a {
+    color: white;
+}
+.image-sidebar p {
+    font-size: 0.6rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.form-sidebar {
+    background-color: #eee;
+}
+.dummy-text {
+    text-align: left;
+}
+.dummy-text p:first-child {
+    padding-bottom: 0.625rem;
+}
+@media screen and (min-width: 48em) {
+    .logo h1 {
+        font-size: 3rem;
+    }
+    .dummy-text > p {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: 64em) {
+    .content {
+        flex-direction: row;
+    }
+    .image-sidebar {
+        min-height: 100vh;
+        min-width: 37.153vw;
+        padding-top: 13.75rem;
+    }
+    .image-sidebar .logo {
+        min-height: 9.375rem;
+    }
+    .image-sidebar p {
+        font-size: 1rem;
+    }
+    .form-sidebar {
+        min-height: 100vh;
+        width: 62.847vw;
+    }
+    .form-sidebar > p {
+        font-size: 1.125rem;
+    }
+    .form-sidebar p > a {
+        color: var(--tones);
+        text-decoration: none;
+    }
+    .dummy-text,
+    form > button,
+    .form-sidebar > p {
+        margin-left: 3.125rem;
+    }
+    .dummy-text {
+        min-height: 23.125rem;
+        max-height: 23.125rem;
+        padding-top: 10.5rem;
+        padding-bottom: 3.75rem;
+    }
+    .dummy-text > p {
+        max-width: 42rem;
+    }
+    .input-form {
+        min-height: 18.75rem;
+        background-color: white;
+        padding-left: 3.125rem;
+        box-shadow: 0 5px 10px -5px gray;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .input-form h2 {
+        font-size: 1.5rem;
+        padding-bottom: 1.25rem;
+    }
+    .input {
+        flex-wrap: wrap;
+        column-gap: 4.375rem;
+        row-gap: 1.5625rem;
+    }
+    .input > div {
+        flex-direction: column;
+    }
+    .inputs {
+        height: 2rem;
+        width: 16.375rem;
+    }
 }
