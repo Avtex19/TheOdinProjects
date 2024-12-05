@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#library {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.book-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-card button {
+    margin-top: 5px;
+}
+
+dialog {
+    padding: 20px;
+}
