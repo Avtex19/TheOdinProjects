@@ -79,5 +79,5 @@ function restartGame() {
     currentPlayer = "X";
     running = true;
     statusText.textContent = `${currentPlayer}'s turn`;
-    cells.forEach(cell => cell.textContent = ""); 
+    cells.forEach(cell => cell.textContent = "");
 }
