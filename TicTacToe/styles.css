@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+}
+
+#gameContainer {
+    font-family: "Avenir Next Condensed", sans-serif;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+
+}
+
+h1 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+#cellContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 75px;
+    height: 75px;
+    border: solid #374151 2px;
+    box-shadow: inset 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    color: #111827;
+    background-color: #e5e7eb;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #d1d5db;
+    transform: scale(1.05);
+}
+
+#statusText {
+    font-size: 1.2rem;
+    color: #4b5563;
+    margin-bottom: 20px;
+}
+
+#restartBtn {
+    border-radius: 15px;
+    font-family: "Avenir Next Condensed", sans-serif;
+    width: 150px;
+    padding: 10px;
+    font-size: large;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restartBtn:hover {
+    background-color: #1e40af;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#restartBtn:active {
+    background-color: #1d4ed8;
+    transform: scale(0.98);
+}
