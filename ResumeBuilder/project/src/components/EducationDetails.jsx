@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import styles from "./general.module.css";
 
 export function EducationDetails({ education }) {
     return (
-        <div>
+        <div  className={styles["education-details"]}>
             <h3>Education Information:</h3>
             <p>
                 {`School Name: ${education.schoolName} | 

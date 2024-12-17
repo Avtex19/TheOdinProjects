@@ -3,6 +3,10 @@ import { GeneralForm } from "./GeneralForm.jsx";
 import { EducationForm } from "./EducationForm.jsx";
 import { PersonalDetails } from "./PersonalDetails.jsx";
 import {EducationDetails} from "./EducationDetails.jsx";
+import {ExperienceForm} from "./ExperienceForm.jsx";
+import {ExperienceDetails} from "./ExperienceDetails.jsx";
+import './general.module.css'
+import styles from "./general.module.css";
 
 export function General() {
     const [person, setPerson] = useState({
@@ -17,6 +21,13 @@ export function General() {
         titleOfStudy: '',
         dateOfStudy: ''
     });
+    const [experience, setExperience] = useState({
+        companyName: '',
+        positionTitle: '',
+        mainResponsibilities: '',
+        startDate: '',
+        endDate: '',
+    });
 
     const [inputValues, setInputValues] = useState({
         firstName: '',
@@ -25,7 +36,12 @@ export function General() {
         phoneNumber: '',
         schoolName: '',
         titleOfStudy: '',
-        dateOfStudy: ''
+        dateOfStudy: '',
+        companyName: '',
+        positionTitle: '',
+        mainResponsibilities: '',
+        startDate: '',
+        endDate: '',
     });
 
     const [showDetails, setShowDetails] = useState(false);
@@ -52,6 +68,15 @@ export function General() {
             dateOfStudy: inputValues.dateOfStudy || education.dateOfStudy
         });
 
+        setExperience({
+            companyName: inputValues.companyName || experience.companyName,
+            positionTitle: inputValues.positionTitle || experience.companyName,
+            mainResponsibilities: experience.mainResponsibilities,
+            startDate: inputValues.startDate || experience.startDate,
+            endDate: inputValues.endDate || experience.endDate,
+
+        })
+
         setShowDetails(true);
 
         setInputValues({
@@ -61,12 +86,17 @@ export function General() {
             phoneNumber: '',
             schoolName: '',
             titleOfStudy: '',
-            dateOfStudy: ''
+            dateOfStudy: '',
+            companyName: '',
+            positionTitle: '',
+            mainResponsibilities: '',
+            startDate: '',
+            endDate: '',
         });
     };
 
     return (
-        <div className="general-container">
+        <div className={styles["general-container"]}>
             <div>
                 <h2>General Information</h2>
                 <GeneralForm
@@ -76,6 +106,11 @@ export function General() {
 
                 <h2>Education Information</h2>
                 <EducationForm
+                    inputValues={inputValues}
+                    handleChange={handleChange}
+                />
+                <h2>Work Experience</h2>
+                <ExperienceForm
                     inputValues={inputValues}
                     handleChange={handleChange}
                 />
@@ -89,10 +124,11 @@ export function General() {
             </div>
 
             {showDetails && (
-                <>
-                    <PersonalDetails person={person} />
-                    <EducationDetails education={education} />
-                </>
+                <div className={styles["results-container"]}>
+                    <PersonalDetails person={person}/>
+                    <EducationDetails education={education}/>
+                    <ExperienceDetails experience={experience}/>
+                </div>
             )}
         </div>
     );
